@@ -1,19 +1,58 @@
-import { StyleSheet, Text, View, SafeAreaView, Image, TouchableOpacity, Button, Alert, Platform, StatusBar } from 'react-native';
+import { 
+  Dimensions,
+  StyleSheet, 
+  Text, 
+  View, 
+  SafeAreaView, 
+  Image, 
+  Button,
+  Alert, 
+  Platform, 
+  StatusBar 
+} from 'react-native';
+
+import {
+useDimensions,
+useDeviceOrientation,
+ } from '@react-native-community/hooks';
 
 
 export default function App() {
-  console.log("App Executed");
+  const orientation = useDeviceOrientation();
 
-  const handlePress = () => console.log("Button Pressed");
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Button 
-      color="orange" 
-      title="Click Me" 
-      onPress={() => Alert.prompt("Title", "Message", text => console.log(text))}
-   />
-    </SafeAreaView>
+    <View style={{
+      backgroundColor: "#fff",
+      flex: 1, 
+      flexDirection: "row", // horitzontal
+      justifyContent: "center", // main axis
+      alignItems: "center", // secondary axis
+      
+    }}>
+
+    <View  style ={{
+      backgroundColor: "dodgerblue",
+      width: 100,
+      height: 100, 
+
+      // flexShrink: 1, // shrink to fit
+      // flexBasis: 100, // width or height 
+      
+    }}/> 
+
+<View  style ={{
+      backgroundColor: "gold",
+      width: 100,
+      height: 100,
+    }}/> 
+
+<View  style ={{
+      backgroundColor: "tomato",
+      width: 100,
+      height: 100, 
+    }}/> 
+    </View>
   );
 }
 
